@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- 模块:类管理 - clazz : 业务对像:类管理 - Clazz, 管理后台 tiles模板配置 -->
+	<!-- 作者:haipenge -->
+	<!-- 创建日期:2016-7-1 11:23:24 -->
+	<!-- 类管理 : Clazz 管理 首页(列表页) -->
+	<definition name="clazz.clazz.manager" extends="default.web">
+		<put-attribute name="default-center" value="clazz.clazz.center"></put-attribute>
+	</definition>
+	<definition name="clazz.clazz.center" extends="default.center">
+		<put-attribute name="default-center-left"
+			value="/component/clazz/clazz/clazz_center_left.jsp"></put-attribute>
+		<put-attribute name="default-center-right"
+			value="/component/clazz/clazz/clazz_center_right.jsp"></put-attribute>
+	</definition>
+
+	<!-- 类管理 新增,编辑页面 -->
+	<definition name="clazz.clazz.update" extends="default.web">
+		<put-attribute name="default-center" value="clazz.clazz.update.center"></put-attribute>
+	</definition>
+	<definition name="clazz.clazz.update.center" extends="default.center">
+		<put-attribute name="default-center-right"
+			value="/component/clazz/clazz/clazz_update.jsp"></put-attribute>
+	</definition>
+
+	<!-- 类管理 明细页 -->
+	<definition name="clazz.clazz.detail" extends="default.web">
+		<put-attribute name="default-center" value="clazz.clazz.detail.center"></put-attribute>
+	</definition>
+	<definition name="clazz.clazz.detail.center" extends="default.center">
+		<put-attribute name="default-center-right"
+			value="/component/clazz/clazz/clazz_detail_right.jsp"></put-attribute>
+		<put-attribute name="default-center-left"
+			value="/component/clazz/clazz/clazz_detail_left.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>

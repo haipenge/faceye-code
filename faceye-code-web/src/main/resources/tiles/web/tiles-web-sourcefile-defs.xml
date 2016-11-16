@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:类管理 - clazz : 业务对像:源码 - SourceFile, 管理后台 tiles模板配置 -->
+    <!-- 作者:haipenge -->
+    <!-- 创建日期:2016-7-4 10:33:01 -->
+    <!-- 源码 : SourceFile 管理 首页(列表页) -->
+	<definition name="clazz.sourceFile.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="clazz.sourceFile.center"></put-attribute>
+	</definition>
+	<definition name="clazz.sourceFile.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/clazz/sourceFile/sourceFile_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 源码 新增,编辑页面 -->
+	<definition name="clazz.sourceFile.update" extends="default.manager">
+	    <put-attribute name="default-center" value="clazz.sourceFile.update.center"></put-attribute>
+	</definition>
+	<definition name="clazz.sourceFile.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/clazz/sourceFile/sourceFile_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 源码 明细页 -->
+	<definition name="clazz.sourceFile.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="clazz.sourceFile.detail.center"></put-attribute>
+	</definition>
+	<definition name="clazz.sourceFile.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/clazz/sourceFile/sourceFile_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
