@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import com.faceye.component.clazz.entity.Methz;
 import com.faceye.component.clazz.repository.mongo.MethzRepository;
@@ -44,7 +44,7 @@ public class MethzServiceImpl extends BaseMongoServiceImpl<Methz, Long, MethzRep
      * 创建日期:2016-7-1 11:23:23<br>
 	*/
 	@Override
-	public Page<Methz> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Methz> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

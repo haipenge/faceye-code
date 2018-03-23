@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.clazz.entity.Methz;
 import com.faceye.component.clazz.repository.mongo.MethzRepository;
@@ -34,24 +34,24 @@ public class MethzRepositoryTestCase extends BaseRepositoryTestCase {
 		Methz methz = new Methz();
 		this.methzRepository.save(methz);
 		Iterable<Methz> methzs = this.methzRepository.findAll();
-		Assert.isTrue(methzs.iterator().hasNext());
+		Assert.assertTrue(methzs.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Methz methz = new Methz();
 		this.methzRepository.save(methz);
-        this.methzRepository.delete(methz.getId());
+        this.methzRepository.deleteById(methz.getId());
         Iterable<Methz> methzs = this.methzRepository.findAll();
-		Assert.isTrue(!methzs.iterator().hasNext());
+		Assert.assertTrue(!methzs.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Methz methz = new Methz();
 		this.methzRepository.save(methz);
-		methz=this.methzRepository.findOne(methz.getId());
-		Assert.isTrue(methz!=null);
+		methz=this.methzRepository.findById(methz.getId());
+		Assert.assertTrue(methz!=null);
 	}
 
 	

@@ -35,40 +35,40 @@ public class JavaParseTestCase extends BaseServiceTestCase {
 
 	@Test
 	public void testUrlIsNotEmpty() throws Exception {
-		Assert.isTrue(StringUtils.isNotEmpty(url));
+		Assert.assertTrue(StringUtils.isNotEmpty(url));
 	}
 
 	@Test
 	public void testJavaParse() throws Exception {
 		String source = "";
 		source = javaParse.read(url);
-		Assert.isTrue(StringUtils.isNotEmpty(source));
+		Assert.assertTrue(StringUtils.isNotEmpty(source));
 	}
 
 	@Test
 	public void testGetPackage() throws Exception {
 		String source = this.javaParse.read(url);
 		String pkg = this.javaParse.getPackage(source);
-		Assert.isTrue(StringUtils.isNotEmpty(pkg));
+		Assert.assertTrue(StringUtils.isNotEmpty(pkg));
 	}
 
 	@Test
 	public void testGetImportClasses() throws Exception {
 		String source = this.javaParse.read(url);
 		List<String> importClasses = this.javaParse.getImportClasses(source);
-		Assert.isTrue(CollectionUtils.isNotEmpty(importClasses));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(importClasses));
 	}
 
 	@Test
 	public void testGetClassNameByUrl() throws Exception {
 		String className = this.javaParse.getClassNameByUrl(url);
-		Assert.isTrue(StringUtils.isNotEmpty(className));
+		Assert.assertTrue(StringUtils.isNotEmpty(className));
 	}
 
 	@Test
 	public void testGetLongClassName() throws Exception {
 		String longName = this.javaParse.getLongClassName(this.javaParse.read(url),url);
-		Assert.isTrue(StringUtils.isNotEmpty(longName));
+		Assert.assertTrue(StringUtils.isNotEmpty(longName));
 	}
 
 	@Test
@@ -151,7 +151,7 @@ public class JavaParseTestCase extends BaseServiceTestCase {
 	@Test
 	public void testParse() throws Exception{
 		this.javaParse.parse();
-		Assert.isTrue(true);
+		Assert.assertTrue(true);
 	}
 	
 }

@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import com.faceye.component.clazz.entity.Clazz;
 import com.faceye.component.clazz.repository.mongo.ClazzRepository;
@@ -44,7 +44,7 @@ public class ClazzServiceImpl extends BaseMongoServiceImpl<Clazz, Long, ClazzRep
      * 创建日期:2016-7-1 11:23:24<br>
 	*/
 	@Override
-	public Page<Clazz> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Clazz> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

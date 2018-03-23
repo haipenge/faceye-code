@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.clazz.entity.Pkg;
 import com.faceye.component.clazz.repository.mongo.PkgRepository;
@@ -34,24 +34,24 @@ public class PkgRepositoryTestCase extends BaseRepositoryTestCase {
 		Pkg pkg = new Pkg();
 		this.pkgRepository.save(pkg);
 		Iterable<Pkg> pkgs = this.pkgRepository.findAll();
-		Assert.isTrue(pkgs.iterator().hasNext());
+		Assert.assertTrue(pkgs.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Pkg pkg = new Pkg();
 		this.pkgRepository.save(pkg);
-        this.pkgRepository.delete(pkg.getId());
+        this.pkgRepository.deleteById(pkg.getId());
         Iterable<Pkg> pkgs = this.pkgRepository.findAll();
-		Assert.isTrue(!pkgs.iterator().hasNext());
+		Assert.assertTrue(!pkgs.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Pkg pkg = new Pkg();
 		this.pkgRepository.save(pkg);
-		pkg=this.pkgRepository.findOne(pkg.getId());
-		Assert.isTrue(pkg!=null);
+		pkg=this.pkgRepository.findById(pkg.getId());
+		Assert.assertTrue(pkg!=null);
 	}
 
 	

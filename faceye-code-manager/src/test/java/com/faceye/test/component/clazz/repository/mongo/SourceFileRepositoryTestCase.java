@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.clazz.entity.SourceFile;
 import com.faceye.component.clazz.repository.mongo.SourceFileRepository;
@@ -34,24 +34,24 @@ public class SourceFileRepositoryTestCase extends BaseRepositoryTestCase {
 		SourceFile sourceFile = new SourceFile();
 		this.sourceFileRepository.save(sourceFile);
 		Iterable<SourceFile> sourceFiles = this.sourceFileRepository.findAll();
-		Assert.isTrue(sourceFiles.iterator().hasNext());
+		Assert.assertTrue(sourceFiles.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		SourceFile sourceFile = new SourceFile();
 		this.sourceFileRepository.save(sourceFile);
-        this.sourceFileRepository.delete(sourceFile.getId());
+        this.sourceFileRepository.deleteById(sourceFile.getId());
         Iterable<SourceFile> sourceFiles = this.sourceFileRepository.findAll();
-		Assert.isTrue(!sourceFiles.iterator().hasNext());
+		Assert.assertTrue(!sourceFiles.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		SourceFile sourceFile = new SourceFile();
 		this.sourceFileRepository.save(sourceFile);
-		sourceFile=this.sourceFileRepository.findOne(sourceFile.getId());
-		Assert.isTrue(sourceFile!=null);
+		sourceFile=this.sourceFileRepository.findById(sourceFile.getId());
+		Assert.assertTrue(sourceFile!=null);
 	}
 
 	

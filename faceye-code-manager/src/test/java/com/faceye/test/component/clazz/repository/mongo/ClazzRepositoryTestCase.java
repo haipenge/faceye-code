@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.clazz.entity.Clazz;
 import com.faceye.component.clazz.repository.mongo.ClazzRepository;
@@ -34,24 +34,24 @@ public class ClazzRepositoryTestCase extends BaseRepositoryTestCase {
 		Clazz clazz = new Clazz();
 		this.clazzRepository.save(clazz);
 		Iterable<Clazz> clazzs = this.clazzRepository.findAll();
-		Assert.isTrue(clazzs.iterator().hasNext());
+		Assert.assertTrue(clazzs.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Clazz clazz = new Clazz();
 		this.clazzRepository.save(clazz);
-        this.clazzRepository.delete(clazz.getId());
+        this.clazzRepository.deleteById(clazz.getId());
         Iterable<Clazz> clazzs = this.clazzRepository.findAll();
-		Assert.isTrue(!clazzs.iterator().hasNext());
+		Assert.assertTrue(!clazzs.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Clazz clazz = new Clazz();
 		this.clazzRepository.save(clazz);
-		clazz=this.clazzRepository.findOne(clazz.getId());
-		Assert.isTrue(clazz!=null);
+		clazz=this.clazzRepository.findById(clazz.getId());
+		Assert.assertTrue(clazz!=null);
 	}
 
 	
