@@ -24,6 +24,7 @@
 		<javaparser.version>2.4.0</javaparser.version>
 		<lucene.version>4.9.0</lucene.version>
 		<ik-analyzer.version>1.0</ik-analyzer.version>
+		<quartz.version>2.3.0</quartz.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -119,6 +120,11 @@
 			<groupId>org.wltea</groupId>
 			<artifactId>ik-analyzer</artifactId>
 			<version>${ik-analyzer.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.quartz-scheduler</groupId>
+		   <artifactId>quartz</artifactId>
+		   <version>${quartz.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
